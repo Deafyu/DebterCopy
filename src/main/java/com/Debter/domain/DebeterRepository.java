@@ -1,12 +1,17 @@
 package com.Debter.domain;
 
-import com.Debter.dto.UserDto;
-
+import java.util.List;
 import java.util.Optional;
 
 public interface DebeterRepository {
 
-    void createNewUser(Long userId);
+    Long createNewUser();
 
     Optional<User> findUseById(Long userId);
+
+    Long createNewTransaction(Long userId, Long userId2, Long money);
+
+    Optional<Transaction> findTransactionById(Long transactionId);
+
+    List<Transaction> getAllHistory(Long userId, Long userId2);
 }
