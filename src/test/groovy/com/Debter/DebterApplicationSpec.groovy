@@ -3,8 +3,6 @@ package com.Debter
 import com.Debter.domain.DebeterFacadeCreator
 import com.Debter.domain.DebterFacade
 import com.Debter.domain.DefaultUser
-import com.Debter.dto.DefaultUserDto
-import org.apache.catalina.users.AbstractUser
 import spock.lang.Specification
 
 class DebterApplicationSpec extends Specification {
@@ -17,8 +15,8 @@ class DebterApplicationSpec extends Specification {
         given:"there is a user"
         defaultUser.getUserId()>>5L
         when:"he adds a lender and a burrower"
-        debterFacade.addNewBurrower(5L,1L)
-        debterFacade.addNewLender(5L,2L)
-        then:"both of them suck have been added"
+        debterFacade.addNewTransaction(5L,1L)
+        then:"both of them have been added"
+        debterFacade.getTransaction(5L,1L)
     }
 }

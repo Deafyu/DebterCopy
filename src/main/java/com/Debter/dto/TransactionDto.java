@@ -6,6 +6,5 @@ import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder
-public class LenderDto extends DefaultUserDto {
-
+public class TransactionDto {
 }

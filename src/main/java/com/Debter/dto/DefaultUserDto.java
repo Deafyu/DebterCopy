@@ -7,7 +7,7 @@ import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder
-public abstract class DefaultUserDto {
+public class DefaultUserDto {
 
     @Getter
     Long userId;

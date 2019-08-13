@@ -1,5 +1,6 @@
 package com.Debter.domain;
 
+import com.Debter.dto.TransactionDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
@@ -10,9 +11,9 @@ public class DebterFacade {
 
     DebeterRepository debeterRepository;
 
-    public void addNewBurrower(Long userId , Long burrowerId) {
+    public void addNewTransaction(Long userId, Long userId2) {
     }
 
-    public void addNewLender(Long userId , Long lenderId) {
+    public TransactionDto getTransaction(Long userId, Long userId2) {
     }
 }
