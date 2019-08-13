@@ -19,6 +19,6 @@ class DebterApplicationSpec extends Specification {
         when:"he adds a lender and a burrower"
         debterFacade.addNewBurrower(5L,1L)
         debterFacade.addNewLender(5L,2L)
-        then:"both of them have been  addded"
+        then:"both of them have been added"
     }
 }
