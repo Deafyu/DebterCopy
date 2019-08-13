@@ -1,6 +1,6 @@
 package com.Debter.domain;
 
-import com.Debter.dto.DefaultUserDto;
+import com.Debter.dto.UserDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,21 +8,24 @@ import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(toBuilder = true)
-public class DefaultUser {
+public class User {
 
     @Getter
     Long userId;
 
-    static DefaultUser fromDto(DefaultUserDto dto){
+    @Getter
+    Long userFunds;
 
-        return DefaultUser.builder()
+    static User fromDto(UserDto dto){
+
+        return User.builder()
                 .userId(dto.getUserId())
                 .build();
     }
 
-    DefaultUserDto dto(){
+    UserDto dto(){
 
-        return DefaultUserDto.builder()
+        return UserDto.builder()
                 .userId(userId)
                 .build();
     }

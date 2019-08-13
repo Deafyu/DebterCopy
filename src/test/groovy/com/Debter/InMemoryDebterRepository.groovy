@@ -1,20 +1,21 @@
 package com.Debter
 
 import com.Debter.domain.DebeterRepository
-import com.Debter.domain.DefaultUser
+import com.Debter.domain.User
 import com.Debter.domain.Transaction
 
 class InMemoryDebterRepository implements DebeterRepository {
 
-    Map<Integer, Transaction> transactions = new HashMap<>()
+    Map<Long, Transaction> transactions = new HashMap<>()
 
-    Map<Integer, DefaultUser> users = new HashMap<>()
+    Map<Long, User> users = new HashMap<>()
 
-    void saveBurrower(Long userId, Long burrowerId) {
-
+    void createNewUser(Long userId) {
+        users.put(userId, User.builder().userId(userId).userFunds(0L).build())
     }
 
-    void saveLender(Long userId, Long lenderId) {
+    Optional<User> findUseById(Long userId) {
 
+        return Optional.ofNullable(users.get(userId))
     }
 }
