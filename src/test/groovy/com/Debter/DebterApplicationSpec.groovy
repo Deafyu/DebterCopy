@@ -2,7 +2,6 @@ package com.Debter
 
 import com.Debter.domain.DebeterFacadeCreator
 import com.Debter.domain.DebterFacade
-import com.Debter.domain.Transaction
 import com.Debter.domain.User
 import com.Debter.dto.TransactionDto
 import spock.lang.Specification
@@ -37,10 +36,29 @@ class DebterApplicationSpec extends Specification {
         user.getUserId() >> 1L
         user1.getUserId() >> 2L
         debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 10L)
-        debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 20L)
+        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 20L)
         debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 30L)
+        debterFacade.addNewTransaction(4L, user1.getUserId(), 30L)
         when: "user ask for history of transactions"
         List<TransactionDto> list = debterFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
         then: "he receives history"
+        list.size()==3               //posortowane maja byc czy cos by date
+    }
+
+    def "system can sort out the transactions by date"(){
+        given:"there are users wich have done some transactions"
+        user.getUserId() >> 1L
+        user1.getUserId() >> 2L
+        debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 10L)
+        debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 30L)
+        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 20L)
+        debterFacade.addNewTransaction(4L, user1.getUserId(), 30L)
+        List<TransactionDto> list = debterFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
+        when:"when system is asked to sort them"
+        debterFacade.sortHistoryByDate(list)
+        then:"he spits them out sorted"
+        list.get(0).getMoney()==10L
+        list.get(1).getMoney()==30L
+        list.get(2).getMoney()==20L
     }
 }

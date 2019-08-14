@@ -15,6 +15,7 @@ public class Transaction {
     Long burrowerId;
     Long money;
     Long transactionId;
+    Long date;
 
     static Transaction fromDto(TransactionDto dto){
 
@@ -23,6 +24,7 @@ public class Transaction {
                 .lenderId(dto.getLenderId())
                 .burrowerId(dto.getBurrowerId())
                 .money(dto.getMoney())
+                .date(dto.getDate())
                 .build();
     }
 
@@ -33,6 +35,7 @@ public class Transaction {
                 .money(money)
                 .burrowerId(burrowerId)
                 .lenderId(lenderId)
+                .date(date)
                 .build();
     }
 

@@ -4,6 +4,8 @@ import com.Debter.domain.DebeterRepository
 import com.Debter.domain.User
 import com.Debter.domain.Transaction
 
+import java.util.stream.Collectors
+
 class InMemoryDebterRepository implements DebeterRepository {
 
     Map<Long, Transaction> transactions = new HashMap<>()
@@ -58,16 +60,16 @@ class InMemoryDebterRepository implements DebeterRepository {
     List<Transaction> getAllHistory(Long userId, Long userId2) {
 
         List<Transaction> list = new ArrayList<Transaction>(transactions.values())
-//        for (int i = 0; i < list.size(); i++) {
-//            if (list.get(i).getLenderId() || list.get(i).getBurrowerId() != userId) {
-//                list.remove(i)
-//            }
-//            if (list.get(i).getLenderId() || list.get(i).getBurrowerId() != userId2) {
-//                list.remove(i)
-//            }
-//        }
-        list.stream()
-            .filter({transaction -> transaction.getBurrowerId()})
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getLenderId() != userId || list.get(i).getBurrowerId() != userId2){
+                if(list.get(i).getLenderId() != userId2 || list.get(i).getBurrowerId() != userId){
+                    list.remove(i)
+                    i--
+                }
+            }
+        }
+
         return list
     }
 }

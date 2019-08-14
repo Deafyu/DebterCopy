@@ -8,8 +8,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(access = AccessLevel.PACKAGE)
@@ -17,9 +17,9 @@ public class DebterFacade {
 
     DebeterRepository debeterRepository;
 
-    public Long addNewTransaction(Long userId, Long userId2, Long money) {
+    public Long addNewTransaction(Long lenderId, Long burrowerId, Long money) {
 
-        return debeterRepository.createNewTransaction(userId, userId2, money);
+        return debeterRepository.createNewTransaction(lenderId, burrowerId, money);
     }
 
     public TransactionDto getTransaction(Long transactionId) throws TransactionNotFoundException {
@@ -44,8 +44,15 @@ public class DebterFacade {
 
     public List<TransactionDto> getEntireHistoryOfTransactions(Long userId, Long userId2) {
 
-        debeterRepository.getAllHistory(userId,userId2);
+        List<Transaction> transactions = debeterRepository.getAllHistory(userId, userId2);
+        List<TransactionDto> transactionsDto = new ArrayList<>();
 
-        return null;
+        transactions.forEach(transaction -> transactionsDto.add(transaction.dto()));
+
+        return transactionsDto;
+    }
+
+    public void sortHistoryByDate(List<TransactionDto> dto) {
+
     }
 }

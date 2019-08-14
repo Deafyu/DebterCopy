@@ -1,6 +1,5 @@
 package com.Debter.dto;
 
-import com.Debter.domain.User;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,4 +14,5 @@ public class TransactionDto {
     Long burrowerId;
     Long money;
     Long transactionId;
+    Long date;
 }
