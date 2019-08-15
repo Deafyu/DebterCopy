@@ -8,7 +8,10 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -19,7 +22,7 @@ public class DebterFacade {
 
     public Long addNewTransaction(Long lenderId, Long burrowerId, Long money) {
 
-        return debeterRepository.createNewTransaction(lenderId, burrowerId, money);
+        return debeterRepository.createNewTransaction(lenderId, burrowerId, money , getCurrentDate());
     }
 
     public TransactionDto getTransaction(Long transactionId) throws TransactionNotFoundException {
@@ -54,5 +57,25 @@ public class DebterFacade {
 
     public void sortHistoryByDate(List<TransactionDto> dto) {
 
+        for(int i = 0 ; i <dto.size() ; i++){
+            if(dto.get(i).getDate()<dto.get(i+1).getDate()){
+                swap(dto.get(i),dto.get(i+1));
+            }
+        }
+    }
+
+    private void swap(Object object1, Object object2) {
+
+        Object tempObject = object1;
+        object1 = object2;
+        object2 = tempObject;
+
+    }
+
+    public Date getCurrentDate(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        System.out.println(dateFormat.format(date));
+        Long a = (Long) new Date()
     }
 }

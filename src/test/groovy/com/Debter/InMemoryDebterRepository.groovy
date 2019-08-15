@@ -34,7 +34,7 @@ class InMemoryDebterRepository implements DebeterRepository {
     }
 
     @Override
-    Long createNewTransaction(Long userId, Long userId2, Long money) {
+    Long createNewTransaction(Long userId, Long userId2, Long money , Date date) {
 
         Random random = new Random()
         Long transactionId = random.nextLong()
@@ -43,6 +43,7 @@ class InMemoryDebterRepository implements DebeterRepository {
                 .lenderId(userId)
                 .burrowerId(userId2)
                 .money(money)
+                .date(date)
                 .transactionId(transactionId)
                 .build()
         )

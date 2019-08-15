@@ -57,8 +57,8 @@ class DebterApplicationSpec extends Specification {
         when:"when system is asked to sort them"
         debterFacade.sortHistoryByDate(list)
         then:"he spits them out sorted"
-        list.get(0).getMoney()==10L
+        list.get(0).getMoney()==20L
         list.get(1).getMoney()==30L
-        list.get(2).getMoney()==20L
+        list.get(2).getMoney()==10L
     }
 }

@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(toBuilder = true)
 @Getter
@@ -15,7 +17,7 @@ public class Transaction {
     Long burrowerId;
     Long money;
     Long transactionId;
-    Long date;
+    Date date;
 
     static Transaction fromDto(TransactionDto dto){
 

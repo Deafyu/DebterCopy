@@ -1,5 +1,6 @@
 package com.Debter.domain;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +10,7 @@ public interface DebeterRepository {
 
     Optional<User> findUseById(Long userId);
 
-    Long createNewTransaction(Long userId, Long userId2, Long money);
+    Long createNewTransaction(Long userId, Long userId2, Long money , Date date);
 
     Optional<Transaction> findTransactionById(Long transactionId);
 
