@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bc506df-9200-4bb6-b40e-9529367dc272" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserRelationNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebterFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebterFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/dto/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/dto/TransactionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/groovy/com/Debter/InMemoryDebterRepository.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/Debter/InMemoryDebterRepository.groovy" afterDir="false" />
     </list>
@@ -25,47 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-              <folding>
-                <element signature="e#20#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebterFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/DebterApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="625">
+              <caret line="71" column="107" lean-forward="true" selection-start-line="71" selection-start-column="107" selection-end-line="71" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,8 +40,82 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/dto/TransactionDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="78" column="69" lean-forward="true" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
+              <folding>
+                <element signature="e#20#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#428#429#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/dto/UserDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/groovy/com/Debter/InMemoryDebterRepository.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="78" column="66" lean-forward="true" selection-start-line="78" selection-start-column="66" selection-end-line="78" selection-end-column="66" />
+            <state relative-caret-position="676">
+              <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
               <folding>
                 <element signature="e#20#62#0" expanded="true" />
               </folding>
@@ -98,46 +136,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/User.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
               <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterFacadeCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,17 +168,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/TransactionNotFoundException.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/DebterApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Debter/dto/TransactionDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/dto/RelationDto.java" />
-        <option value="$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/Relation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/RelationNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserRelationNotFoundException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebterFacade.java" />
-        <option value="$PROJECT_DIR$/src/test/groovy/com/Debter/InMemoryDebterRepository.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Debter/dto/TransactionDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebterFacade.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/com/Debter/InMemoryDebterRepository.groovy" />
       </list>
     </option>
   </component>
@@ -192,10 +196,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="95" />
+    <option name="y" value="-10" />
+    <option name="width" value="1296" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -211,11 +215,6 @@
             <path>
               <item name="Debter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Debter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Debter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Debter" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Debter" type="b2602c69:ProjectViewProjectNode" />
@@ -291,6 +290,11 @@
               <item name="groovy" type="462c0819:PsiDirectoryNode" />
               <item name="Debter" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Debter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Debter" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -316,7 +320,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DebterApplicationSpec">
+  <component name="RunManager" selected="JUnit.DebterApplicationSpec.user is able to delete another user form his friend list">
     <configuration name="DebterApplicationSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Debter" />
       <extension name="coverage">
@@ -332,22 +336,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DebterApplicationSpec.User is added by System" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Debter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Debter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Debter" />
-      <option name="MAIN_CLASS_NAME" value="com.Debter.DebterApplicationSpec" />
-      <option name="METHOD_NAME" value="User is added by System" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DebterApplicationSpec.system can sort out the transactions by date" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Debter" />
       <extension name="coverage">
@@ -359,6 +347,22 @@
       <option name="PACKAGE_NAME" value="com.Debter" />
       <option name="MAIN_CLASS_NAME" value="com.Debter.DebterApplicationSpec" />
       <option name="METHOD_NAME" value="system can sort out the transactions by date" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DebterApplicationSpec.user is abele to delete another user form his friend list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Debter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Debter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Debter" />
+      <option name="MAIN_CLASS_NAME" value="com.Debter.DebterApplicationSpec" />
+      <option name="METHOD_NAME" value="user is abele to delete another user form his friend list" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -380,7 +384,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DebterApplicationSpec.user is able to get specific history of transactions with another user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DebterApplicationSpec.user is able to delete another user form his friend list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Debter" />
       <extension name="coverage">
         <pattern>
@@ -390,7 +394,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.Debter" />
       <option name="MAIN_CLASS_NAME" value="com.Debter.DebterApplicationSpec" />
-      <option name="METHOD_NAME" value="user is able to get specific history of transactions with another user" />
+      <option name="METHOD_NAME" value="user is able to delete another user form his friend list" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -398,11 +402,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DebterApplicationSpec.user is able to delete another user form his friend list" />
+        <item itemvalue="JUnit.DebterApplicationSpec.system can sort out the transactions by date" />
+        <item itemvalue="JUnit.DebterApplicationSpec.user is abele to delete another user form his friend list" />
         <item itemvalue="JUnit.DebterApplicationSpec" />
         <item itemvalue="JUnit.DebterApplicationSpec.user is able to add a new friend to his friendList" />
-        <item itemvalue="JUnit.DebterApplicationSpec.User is added by System" />
-        <item itemvalue="JUnit.DebterApplicationSpec.system can sort out the transactions by date" />
-        <item itemvalue="JUnit.DebterApplicationSpec.user is able to get specific history of transactions with another user" />
       </list>
     </recent_temporary>
   </component>
@@ -452,31 +456,17 @@
       <option name="project" value="LOCAL" />
       <updated>1565955367625</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added sorted by date , getting History of Transactions, added userRelation">
+      <created>1565957797815</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565957797815</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 12h 25m 13s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 12h 25m 33s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 12h 26m 42s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 13h 32m 06s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 13h 32m 13s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 13h 34m 19s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 13h 35m 49s.xml">
-      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 13h 40m 14s.xml">
       <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
     </history-entry>
@@ -486,12 +476,33 @@
     <history-entry file="DebterApplicationSpec - 2019.08.16 at 13h 40m 25s.xml">
       <configuration name="DebterApplicationSpec" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DebterApplicationSpec_user_is_able_to_add_a_new_friend_to_his_friendList - 2019.08.16 at 14h 15m 27s.xml">
+      <configuration name="DebterApplicationSpec.user is able to add a new friend to his friendList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DebterApplicationSpec_user_is_able_to_add_a_new_friend_to_his_friendList - 2019.08.16 at 14h 15m 35s.xml">
+      <configuration name="DebterApplicationSpec.user is able to add a new friend to his friendList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DebterApplicationSpec_user_is_able_to_add_a_new_friend_to_his_friendList - 2019.08.16 at 14h 15m 44s.xml">
+      <configuration name="DebterApplicationSpec.user is able to add a new friend to his friendList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DebterApplicationSpec - 2019.08.16 at 14h 15m 58s.xml">
+      <configuration name="DebterApplicationSpec" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DebterApplicationSpec - 2019.08.16 at 15h 18m 55s.xml">
+      <configuration name="DebterApplicationSpec" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DebterApplicationSpec_user_is_abele_to_delete_another_user_form_his_friend_list - 2019.08.16 at 18h 49m 50s.xml">
+      <configuration name="DebterApplicationSpec.user is abele to delete another user form his friend list" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DebterApplicationSpec_system_can_sort_out_the_transactions_by_date - 2019.08.16 at 18h 50m 00s.xml">
+      <configuration name="DebterApplicationSpec.system can sort out the transactions by date" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24270834" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16145833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -550,7 +561,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding transaction etc" />
     <MESSAGE value="added sorted by date , getting History of Transactions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sorted by date , getting History of Transactions" />
+    <MESSAGE value="added sorted by date , getting History of Transactions, added userRelation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sorted by date , getting History of Transactions, added userRelation" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -585,13 +597,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/j_libera.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="18" selection-start-line="20" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/Objects.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -617,10 +622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserRelationNotFoundException.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="357">
+          <caret line="21" column="18" selection-start-line="20" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -631,20 +636,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserNotFoundException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/DebterApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserRelationNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterFacadeCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/exceptions/UserNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -660,18 +682,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/dto/TransactionDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="391">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -681,7 +693,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -690,38 +702,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="234">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterFacadeCreator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/dto/UserRelationDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/DebterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="578">
+          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -730,8 +734,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebterFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="625">
+          <caret line="71" column="107" lean-forward="true" selection-start-line="71" selection-start-column="107" selection-end-line="71" selection-end-column="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Debter/domain/DebeterRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -740,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/com/Debter/InMemoryDebterRepository.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="78" column="66" lean-forward="true" selection-start-line="78" selection-start-column="66" selection-end-line="78" selection-end-column="66" />
+        <state relative-caret-position="676">
+          <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
           <folding>
             <element signature="e#20#62#0" expanded="true" />
           </folding>
@@ -750,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/com/Debter/DebterApplicationSpec.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+        <state relative-caret-position="608">
+          <caret line="78" column="69" lean-forward="true" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
           <folding>
             <element signature="e#20#65#0" expanded="true" />
           </folding>

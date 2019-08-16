@@ -4,6 +4,7 @@ import com.Debter.dto.TransactionDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(toBuilder = true)
 @Getter
+@Setter
 public class Transaction {
 
     Long lenderId;
@@ -18,11 +20,12 @@ public class Transaction {
     Long money;
     Long transactionId;
     Date date;
+    boolean doneTransaction;
 
     static Transaction fromDto(TransactionDto dto){
 
         return Transaction.builder()
-                .transactionId(dto.getTransactionId())
+                .doneTransaction(dto.getAreFriends())
                 .lenderId(dto.getLenderId())
                 .burrowerId(dto.getBurrowerId())
                 .money(dto.getMoney())
@@ -33,7 +36,7 @@ public class Transaction {
     TransactionDto dto(){
 
         return TransactionDto.builder()
-                .transactionId(transactionId)
+                .areFriends(doneTransaction)
                 .money(money)
                 .burrowerId(burrowerId)
                 .lenderId(lenderId)

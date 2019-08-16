@@ -46,6 +46,7 @@ class InMemoryDebterRepository implements DebeterRepository {
                 .money(money)
                 .date(date)
                 .transactionId(transactionId)
+                .doneTransaction(false)
                 .build()
         )
 
@@ -86,6 +87,7 @@ class InMemoryDebterRepository implements DebeterRepository {
                 .userId(userId)
                 .userId2(userId2)
                 .date(date)
+                .areFriends(true)
                 .build()
         )
 
@@ -96,5 +98,10 @@ class InMemoryDebterRepository implements DebeterRepository {
     Optional<UserRelation> findRelationById(Long relationId) {
 
         return Optional.ofNullable(userRelations.get(relationId))
+    }
+
+    @Override
+    void setRelationStatus(Long userRelationId , boolean relation) {
+        userRelations.get(userRelationId).setAreFriends(relation)
     }
 }

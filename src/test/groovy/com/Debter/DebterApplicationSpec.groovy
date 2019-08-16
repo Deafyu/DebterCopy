@@ -75,4 +75,15 @@ class DebterApplicationSpec extends Specification {
         then: "their relation is added to the db"
         debterFacade.getRelation(relationId) != null
     }
+
+    def "user is able to delete another user form his friend list"(){
+        given:"there are 2 users wich are friends"
+        user.getUserId() >> 1L
+        user1.getUserId() >> 2L
+        when:"1 user deletes another"
+        Long relationId = debterFacade.addNewRelation(user.getUserId(), user1.getUserId())
+        debterFacade.setUserRelation(relationId , false)
+        then:"there are no more friends"
+        !debterFacade.getRelation(relationId).getAreFriends()
+    }
 }

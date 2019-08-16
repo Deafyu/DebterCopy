@@ -9,10 +9,8 @@ import com.Debter.exceptions.UserNotFoundException;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -58,14 +56,14 @@ public class DebterFacade {
 
   public List<TransactionDto> sortHistoryByDate(List<TransactionDto> dto) {
 
-        return dto.stream()
+    return dto.stream()
         .sorted(Comparator.comparingLong(TransactionDto::getTime).reversed())
         .collect(Collectors.toList());
   }
 
   public Long addNewRelation(Long userId, Long userId2) {
 
-    return debeterRepository.createNewRelation(userId , userId2 , new Date());
+    return debeterRepository.createNewRelation(userId, userId2, new Date());
   }
 
   public UserRelationDto getRelation(Long relationId) throws UserRelationNotFoundException {
@@ -74,4 +72,10 @@ public class DebterFacade {
         .orElseThrow(() -> new UserRelationNotFoundException("UserRelation: " + relationId + " not found"))
         .dto();
   }
+
+  public void setUserRelation(Long relationId, boolean relation) {
+
+    debeterRepository.findRelationById(relationId).ifPresent(x -> debeterRepository.setRelationStatus(relationId, relation));
+  }
+
 }
