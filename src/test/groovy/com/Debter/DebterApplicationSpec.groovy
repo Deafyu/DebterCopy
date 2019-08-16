@@ -42,23 +42,33 @@ class DebterApplicationSpec extends Specification {
         when: "user ask for history of transactions"
         List<TransactionDto> list = debterFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
         then: "he receives history"
-        list.size()==3               //posortowane maja byc czy cos by date
+        list.size() == 3
     }
 
-    def "system can sort out the transactions by date"(){
-        given:"there are users wich have done some transactions"
+    def "system can sort out the transactions by date"() {
+        given: "there are users wich have done some transactions"
         user.getUserId() >> 1L
         user1.getUserId() >> 2L
         debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 10L)
+        Thread.sleep(1)
         debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 30L)
+        Thread.sleep(1)
         debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 20L)
-        debterFacade.addNewTransaction(4L, user1.getUserId(), 30L)
+        Thread.sleep(1)
+        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 40L)
+        Thread.sleep(1)
+        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 25L)
+        Thread.sleep(1)
+        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 5L)
         List<TransactionDto> list = debterFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
-        when:"when system is asked to sort them"
-        debterFacade.sortHistoryByDate(list)
-        then:"he spits them out sorted"
-        list.get(0).getMoney()==20L
-        list.get(1).getMoney()==30L
-        list.get(2).getMoney()==10L
+        when: "when system is asked to sort them"
+        list = debterFacade.sortHistoryByDate(list)
+        then: "he spits them out sorted"
+        list.get(0).getMoney() == 5L
+        list.get(1).getMoney() == 25L
+        list.get(2).getMoney() == 40L
+        list.get(3).getMoney() == 20L
+        list.get(4).getMoney() == 30L
+        list.get(5).getMoney() == 10L
     }
 }

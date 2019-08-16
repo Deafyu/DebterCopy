@@ -17,4 +17,8 @@ public class TransactionDto {
     Long money;
     Long transactionId;
     Date date;
+
+    public Long getTime(){
+        return date.getTime();
+    }
 }
