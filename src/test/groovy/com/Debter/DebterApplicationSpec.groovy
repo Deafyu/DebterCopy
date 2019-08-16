@@ -56,19 +56,23 @@ class DebterApplicationSpec extends Specification {
         debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 20L)
         Thread.sleep(1)
         debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 40L)
-        Thread.sleep(1)
-        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 25L)
-        Thread.sleep(1)
-        debterFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 5L)
-        List<TransactionDto> list = debterFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
+        List<TransactionDto> list2 = debterFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
         when: "when system is asked to sort them"
-        list = debterFacade.sortHistoryByDate(list)
-        then: "he spits them out sorted"
-        list.get(0).getMoney() == 5L
-        list.get(1).getMoney() == 25L
-        list.get(2).getMoney() == 40L
-        list.get(3).getMoney() == 20L
-        list.get(4).getMoney() == 30L
-        list.get(5).getMoney() == 10L
+        List<TransactionDto> list = debterFacade.sortHistoryByDate(list2)
+        then: "it gets sorted history"
+        list.get(0).getMoney() == 40L
+        list.get(1).getMoney() == 20L
+        list.get(2).getMoney() == 30L
+        list.get(3).getMoney() == 10L
+    }
+
+    def "user is able to add a new friend to his friendList"() {
+        given: "there are 2 users"
+        user.getUserId() >> 1L
+        user1.getUserId() >> 2L
+        when: "one accepts the offer sent by the 2nd one"
+        Long relationId = debterFacade.addNewRelation(user.getUserId(), user1.getUserId())
+        then: "their relation is added to the db"
+        debterFacade.getRelation(relationId) != null
     }
 }

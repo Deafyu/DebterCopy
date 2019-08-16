@@ -1,7 +1,9 @@
 package com.Debter.domain;
 
+import com.Debter.dto.UserRelationDto;
 import com.Debter.dto.TransactionDto;
 import com.Debter.dto.UserDto;
+import com.Debter.exceptions.UserRelationNotFoundException;
 import com.Debter.exceptions.TransactionNotFoundException;
 import com.Debter.exceptions.UserNotFoundException;
 import lombok.AccessLevel;
@@ -61,4 +63,15 @@ public class DebterFacade {
         .collect(Collectors.toList());
   }
 
+  public Long addNewRelation(Long userId, Long userId2) {
+
+    return debeterRepository.createNewRelation(userId , userId2 , new Date());
+  }
+
+  public UserRelationDto getRelation(Long relationId) throws UserRelationNotFoundException {
+
+    return debeterRepository.findRelationById(relationId)
+        .orElseThrow(() -> new UserRelationNotFoundException("UserRelation: " + relationId + " not found"))
+        .dto();
+  }
 }

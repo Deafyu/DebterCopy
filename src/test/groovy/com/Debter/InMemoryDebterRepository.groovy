@@ -3,14 +3,15 @@ package com.Debter
 import com.Debter.domain.DebeterRepository
 import com.Debter.domain.User
 import com.Debter.domain.Transaction
-
-import java.util.stream.Collectors
+import com.Debter.domain.UserRelation
 
 class InMemoryDebterRepository implements DebeterRepository {
 
     Map<Long, Transaction> transactions = new HashMap<>()
 
     Map<Long, User> users = new HashMap<>()
+
+    Map<Long , UserRelation> userRelations = new HashMap<>()
 
     @Override
     Long createNewUser() {
@@ -34,7 +35,7 @@ class InMemoryDebterRepository implements DebeterRepository {
     }
 
     @Override
-    Long createNewTransaction(Long userId, Long userId2, Long money , Date date) {
+    Long createNewTransaction(Long userId, Long userId2, Long money, Date date) {
 
         Random random = new Random()
         Long transactionId = random.nextLong()
@@ -63,8 +64,8 @@ class InMemoryDebterRepository implements DebeterRepository {
         List<Transaction> list = new ArrayList<Transaction>(transactions.values())
 
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getLenderId() != userId || list.get(i).getBurrowerId() != userId2){
-                if(list.get(i).getLenderId() != userId2 || list.get(i).getBurrowerId() != userId){
+            if (list.get(i).getLenderId() != userId || list.get(i).getBurrowerId() != userId2) {
+                if (list.get(i).getLenderId() != userId2 || list.get(i).getBurrowerId() != userId) {
                     list.remove(i)
                     i--
                 }
@@ -72,5 +73,28 @@ class InMemoryDebterRepository implements DebeterRepository {
         }
 
         return list
+    }
+
+    @Override
+    Long createNewRelation(Long userId, Long userId2, Date date) {
+
+        Random random = new Random()
+        Long relationId = random.nextLong()
+
+        userRelations.put(relationId, UserRelation.builder()
+                .relationId(relationId)
+                .userId(userId)
+                .userId2(userId2)
+                .date(date)
+                .build()
+        )
+
+        return relationId
+    }
+
+    @Override
+    Optional<UserRelation> findRelationById(Long relationId) {
+
+        return Optional.ofNullable(userRelations.get(relationId))
     }
 }

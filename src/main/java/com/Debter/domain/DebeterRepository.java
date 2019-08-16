@@ -15,4 +15,8 @@ public interface DebeterRepository {
     Optional<Transaction> findTransactionById(Long transactionId);
 
     List<Transaction> getAllHistory(Long userId, Long userId2);
+
+    Long createNewRelation(Long userId, Long userId2, Date date);
+
+    Optional <UserRelation> findRelationById(Long relationId);
 }
