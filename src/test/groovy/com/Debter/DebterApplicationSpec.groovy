@@ -76,14 +76,34 @@ class DebterApplicationSpec extends Specification {
         debterFacade.getRelation(relationId) != null
     }
 
-    def "user is able to delete another user form his friend list"(){
-        given:"there are 2 users wich are friends"
+    def "user is able to delete another user form his friend list"() {
+        given: "there are 2 users wich are friends"
         user.getUserId() >> 1L
         user1.getUserId() >> 2L
-        when:"1 user deletes another"
+        when: "1 user deletes another"
         Long relationId = debterFacade.addNewRelation(user.getUserId(), user1.getUserId())
-        debterFacade.setUserRelation(relationId , false)
-        then:"there are no more friends"
+        debterFacade.setUserRelation(relationId, false)
+        then: "there are no more friends"
         !debterFacade.getRelation(relationId).getAreFriends()
+    }
+
+    def "transaction can be payedBack"() {
+        given: "there is a transaction"
+        user.getUserId() >> 1L
+        user1.getUserId() >> 2L
+        Long transactionId = debterFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 10L)
+        when: "when transaction is payed back"
+        debterFacade.payTransaction(transactionId, true)
+        then: "it has been payed back"
+        debterFacade.getTransaction(transactionId).getPayedBack()
+    }
+
+    def "user can log in"() {
+        given: "there is a user"
+        Long userId = debterFacade.addNewUser()
+        when: "when he logs in"
+        debterFacade.logInUser(userId, true)
+        then: "he has loged in"
+        debterFacade.getUser(userId).getLogedIn()
     }
 }

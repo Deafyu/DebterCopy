@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
 
 import java.util.Date;
 
@@ -20,12 +21,15 @@ public class Transaction {
     Long money;
     Long transactionId;
     Date date;
-    boolean doneTransaction;
+
+    @Setter
+    @NonFinal
+    boolean payedBack;
 
     static Transaction fromDto(TransactionDto dto){
 
         return Transaction.builder()
-                .doneTransaction(dto.getAreFriends())
+                .payedBack(dto.getPayedBack())
                 .lenderId(dto.getLenderId())
                 .burrowerId(dto.getBurrowerId())
                 .money(dto.getMoney())
@@ -36,7 +40,7 @@ public class Transaction {
     TransactionDto dto(){
 
         return TransactionDto.builder()
-                .areFriends(doneTransaction)
+                .payedBack(payedBack)
                 .money(money)
                 .burrowerId(burrowerId)
                 .lenderId(lenderId)

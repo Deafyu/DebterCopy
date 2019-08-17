@@ -4,7 +4,9 @@ import com.Debter.dto.UserDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(toBuilder = true)
@@ -16,17 +18,28 @@ public class User {
     @Getter
     Long userFunds;
 
+
+    @Setter
+    @NonFinal
+    boolean accActive;
+
+    @Setter
+    @NonFinal
+    boolean logedIn;
+
     static User fromDto(UserDto dto){
 
         return User.builder()
-                .userId(dto.getUserId())
+                .userFunds(dto.getUserFunds())
+                .logedIn(dto.getLogedIn())
                 .build();
     }
 
     UserDto dto(){
 
         return UserDto.builder()
-                .userId(userId)
+                .userFunds(userFunds)
+                .logedIn(logedIn)
                 .build();
     }
 

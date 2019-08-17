@@ -15,13 +15,13 @@ public class TransactionDto {
     Long lenderId;
     Long burrowerId;
     Long money;
-    boolean areFriends;
     Date date;
+    boolean payedBack;
 
     public Long getTime(){
         return date.getTime();
     }
-    public boolean getAreFriends(){
-        return areFriends;
+    public boolean getPayedBack(){
+        return payedBack;
     }
 }

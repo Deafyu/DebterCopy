@@ -75,7 +75,16 @@ public class DebterFacade {
 
   public void setUserRelation(Long relationId, boolean relation) {
 
-    debeterRepository.findRelationById(relationId).ifPresent(x -> debeterRepository.setRelationStatus(relationId, relation));
+    debeterRepository.findRelationById(relationId).ifPresent(userRelation -> debeterRepository.setAreFriendsStatus(relationId, relation));
   }
 
+  public void payTransaction(Long transactionId, boolean payedBackStatus) {
+
+    debeterRepository.findTransactionById(transactionId).ifPresent(transaction -> debeterRepository.setTransactionsPayedBackStatus(transactionId, payedBackStatus));
+  }
+
+  public void logInUser(Long userId, boolean singInStatus) {
+
+    debeterRepository.findUseById(userId).ifPresent(user -> debeterRepository.setSingInStatus(userId,singInStatus));
+  }
 }

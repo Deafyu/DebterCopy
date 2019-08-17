@@ -5,6 +5,8 @@ import com.Debter.domain.User
 import com.Debter.domain.Transaction
 import com.Debter.domain.UserRelation
 
+import java.time.LocalDate
+
 class InMemoryDebterRepository implements DebeterRepository {
 
     Map<Long, Transaction> transactions = new HashMap<>()
@@ -22,6 +24,8 @@ class InMemoryDebterRepository implements DebeterRepository {
         users.put(userId, User.builder()
                 .userId(userId)
                 .userFunds(0L)
+                .accActive(true)
+                .logedIn(false)
                 .build()
         )
 
@@ -46,7 +50,7 @@ class InMemoryDebterRepository implements DebeterRepository {
                 .money(money)
                 .date(date)
                 .transactionId(transactionId)
-                .doneTransaction(false)
+                .payedBack(false)
                 .build()
         )
 
@@ -101,7 +105,20 @@ class InMemoryDebterRepository implements DebeterRepository {
     }
 
     @Override
-    void setRelationStatus(Long userRelationId , boolean relation) {
-        userRelations.get(userRelationId).setAreFriends(relation)
+    void setAreFriendsStatus(Long relationId, boolean relationStatus) {
+        userRelations.get(relationId).setAreFriends(relationStatus)
+    }
+
+    @Override
+    void setTransactionsPayedBackStatus(Long transactionId, boolean payedBackStatus) {
+
+        transactions.get(transactionId).setPayedBack(payedBackStatus)
+    }
+
+    @Override
+    void setSingInStatus(Long userId, boolean singInStatus) {
+
+        users.get(userId).setLogedIn(singInStatus)
+
     }
 }

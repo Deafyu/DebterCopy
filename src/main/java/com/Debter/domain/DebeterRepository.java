@@ -20,5 +20,9 @@ public interface DebeterRepository {
 
   Optional<UserRelation> findRelationById(Long relationId);
 
-  void setRelationStatus(Long userRelationId, boolean relation);
+  void setAreFriendsStatus(Long relationId, boolean relationStatus);
+
+  void setTransactionsPayedBackStatus(Long transactionId, boolean payedBackStatus);
+
+  void setSingInStatus(Long userId, boolean singInStatus);
 }
