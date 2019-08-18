@@ -11,4 +11,6 @@ public interface UserRepository {
   void setSingInStatus(Long userId, boolean singInStatus);
 
   void setAccountActiveStatus(Long userId, boolean accountActiveStatus);
+
+  void addUserFunds(Long userId, Long funds);
 }

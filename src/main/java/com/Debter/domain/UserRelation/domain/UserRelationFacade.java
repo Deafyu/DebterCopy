@@ -26,7 +26,7 @@ public class UserRelationFacade {
         .dto();
   }
 
-  public void setUserRelation(Long relationId, boolean relation) {
+  public void setFriendStatus(Long relationId, boolean relation) {
 
     userRelationRepository.findRelationById(relationId).ifPresent(userRelation -> userRelationRepository.setAreFriendsStatus(relationId, relation));
   }
