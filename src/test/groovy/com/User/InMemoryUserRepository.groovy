@@ -43,16 +43,9 @@ class InMemoryUserRepository implements UserRepository{
     }
 
     @Override
-    void addUserFunds(Long userId, Long funds) {
+    void changeUserFunds(Long userId, Long funds) {
 
         User currentUser = users.get(userId)
         currentUser.setUserFunds(currentUser.getUserFunds() + funds)
-    }
-
-    @Override
-    void removeUserFunds(Long userId, Long funds) {
-
-        User currentUser = users.get(userId)
-        currentUser.setUserFunds(currentUser.getUserFunds() - funds)
     }
 }

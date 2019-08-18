@@ -10,4 +10,12 @@ class DebterApplicationSpec extends Specification {
 
     DebterFacade debterFacade = new DebeterFacadeCreator().createDebeterFacade(new InMemoryTransactionRepository(), new InMemoryUserRepository())
 
+    def "check for sufficient funds"() {
+        given: "there are 2 users"
+
+        when: "when system check user funds"
+
+        then: "funds have been checked"
+        debterFacade.checkFunds()
+    }
 }

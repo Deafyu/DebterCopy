@@ -12,7 +12,5 @@ public interface UserRepository {
 
   void setAccountActiveStatus(Long userId, boolean accountActiveStatus);
 
-  void addUserFunds(Long userId, Long funds);
-
-  void removeUserFunds(Long userId, Long funds);
+  void changeUserFunds(Long userId, Long funds);
 }

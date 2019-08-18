@@ -37,10 +37,10 @@ public class UserFacade {
   }
 
   public void addFunds(Long userId, Long funds) {
-    userRepository.findUserById(userId).ifPresent(user -> userRepository.addUserFunds(userId, funds));
+    userRepository.findUserById(userId).ifPresent(user -> userRepository.changeUserFunds(userId, funds));
   }
 
   public void removeFunds(Long userId, Long funds) {
-    userRepository.findUserById(userId).ifPresent(user -> userRepository.removeUserFunds(userId, funds));
+    userRepository.findUserById(userId).ifPresent(user -> userRepository.changeUserFunds(userId, -funds));
   }
 }
