@@ -27,7 +27,7 @@ class UserRelationSpec extends Specification {
         user1.getUserId() >> 2L
         when: "1 user deletes another"
         Long relationId = userRelationFacade.addNewRelation(user.getUserId(), user1.getUserId())
-        userRelationFacade.setUserRelation(relationId, false)
+        userRelationFacade.setFriendStatus(relationId, false)
         then: "there are no more friends"
         !userRelationFacade.getRelation(relationId).getAreFriends()
     }
