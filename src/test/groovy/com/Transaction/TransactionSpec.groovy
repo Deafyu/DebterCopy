@@ -19,7 +19,7 @@ class TransactionSpec extends Specification {
         when: "one lends to another"
         Long transactionId = transactionFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 10L)
         then: "transaction has been added"
-        transactionFacade.getTransaction(transactionId) != null
+        transactionFacade.findTransactionById(transactionId) != null
     }
 
     def "user is able to get specific history of transactions with another user"() {
@@ -63,8 +63,8 @@ class TransactionSpec extends Specification {
         user1.getUserId() >> 2L
         Long transactionId = transactionFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 10L)
         when: "when transaction is payed back"
-        transactionFacade.payTransaction(transactionId, true)
+        transactionFacade.changePayedBackStatus(transactionId, true)
         then: "it has been payed back"
-        transactionFacade.getTransaction(transactionId).getPayedBack()
+        transactionFacade.findTransactionById(transactionId).getPayedBack()
     }
 }

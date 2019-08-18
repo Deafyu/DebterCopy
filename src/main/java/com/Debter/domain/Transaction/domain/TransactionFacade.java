@@ -6,10 +6,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -20,10 +17,23 @@ public class TransactionFacade {
 
   public Long addNewTransaction(Long lenderId, Long burrowerId, Long money) {
 
-    return transactionRepository.createNewTransaction(lenderId, burrowerId, money, new Date());
+    Random random = new Random();
+    Long transactionId = random.nextLong();
+
+    transactionRepository.saveTransaction(Transaction.builder()
+        .transactionId(transactionId)
+        .date(new Date())
+        .burrowerId(burrowerId)
+        .lenderId(lenderId)
+        .money(money)
+        .payedBack(false)
+        .build()
+    );
+
+    return transactionId;
   }
 
-  public TransactionDto getTransaction(Long transactionId) throws TransactionNotFoundException {
+  public TransactionDto findTransactionById(Long transactionId) throws TransactionNotFoundException {
 
     return transactionRepository.findTransactionById(transactionId)
         .orElseThrow(() -> new TransactionNotFoundException("Transaction :" + transactionId + " not found"))
@@ -37,6 +47,15 @@ public class TransactionFacade {
 
     transactions.forEach(transaction -> transactionsDto.add(transaction.dto()));
 
+    for (int i = 0; i < transactionsDto.size(); i++) {
+      if (!transactionsDto.get(i).getLenderId().equals(userId) || !transactionsDto.get(i).getBurrowerId().equals(userId2)) {
+        if (!transactionsDto.get(i).getLenderId().equals(userId2) || !transactionsDto.get(i).getBurrowerId().equals(userId)) {
+          transactionsDto.remove(i);
+          i--;
+        }
+      }
+    }
+
     return transactionsDto;
   }
 
@@ -47,8 +66,10 @@ public class TransactionFacade {
         .collect(Collectors.toList());
   }
 
-  public void payTransaction(Long transactionId, boolean payedBackStatus) {
+  public void changePayedBackStatus(Long transactionId, boolean payedBackStatus) throws TransactionNotFoundException {
 
-    transactionRepository.findTransactionById(transactionId).ifPresent(transaction -> transactionRepository.setTransactionsPayedBackStatus(transactionId, payedBackStatus));
+    TransactionDto dto = findTransactionById(transactionId);
+    dto.setPayedBack(payedBackStatus);
+    transactionRepository.saveTransaction(Transaction.fromDto(dto));
   }
 }

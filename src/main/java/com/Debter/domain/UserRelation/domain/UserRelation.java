@@ -19,9 +19,6 @@ public class UserRelation {
   Long userId2;
   Date date;
   Long relationId;
-
-  @NonFinal
-  @Setter
   boolean areFriends;
 
   static UserRelation fromDto(UserRelationDto dto) {

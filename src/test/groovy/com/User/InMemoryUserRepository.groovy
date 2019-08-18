@@ -8,49 +8,13 @@ class InMemoryUserRepository implements UserRepository{
     Map<Long, User> users = new HashMap<>()
 
     @Override
-    Long createNewUser() {
-
-        Random random = new Random()
-        Long userId = random.nextLong()
-
-        users.put(userId, User.builder()
-                .userId(userId)
-                .userFunds(0L)
-                .accActive(true)
-                .logedIn(false)
-                .build()
-        )
-
-        return userId
-    }
-
-    @Override
     Optional<User> findUserById(Long userId) {
 
         return Optional.ofNullable(users.get(userId))
     }
 
     @Override
-    void setSingInStatus(Long userId, boolean singInStatus) {
-
-        users.get(userId).setLogedIn(singInStatus)
-    }
-
-    @Override
-    void setAccountActiveStatus(Long userId, boolean accountActiveStatus) {
-
-        users.get(userId).setAccActive(accountActiveStatus)
-    }
-
-    @Override
-    void changeUserFunds(Long userId, Long funds) {
-
-        User currentUser = users.get(userId)
-        currentUser.setUserFunds(currentUser.getUserFunds() + funds)
-    }
-
-    @Override
-    Long getUserFunds(Long userId) {
-        return users.get(userId).getUserFunds()
+    void saveUser(User user) {
+        users.put(user.getUserId(),user)
     }
 }
