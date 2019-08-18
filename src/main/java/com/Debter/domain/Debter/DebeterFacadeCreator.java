@@ -1,5 +1,7 @@
 package com.Debter.domain.Debter;
 
+import com.Debter.domain.Transaction.domain.TransactionRepository;
+import com.Debter.domain.User.domain.UserRepository;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +13,23 @@ import org.springframework.context.annotation.Configuration;
 public class DebeterFacadeCreator {
 
   @Autowired
-  DebeterRepository debeterRepository;
+  UserRepository userRepository;
 
-  private DebterFacade createDebeterFacade(DebeterRepository debeterRepository) {
+  @Autowired
+  TransactionRepository transactionRepository;
+
+  public DebterFacade createDebeterFacade(TransactionRepository transactionRepository, UserRepository userRepository) {
 
     return DebterFacade.builder()
-        .debeterRepository(debeterRepository)
+        .userRepository(userRepository)
+        .transactionRepository(transactionRepository)
         .build();
   }
 
   @Bean
   DebterFacade createDebeterFacade() {
 
-    return createDebeterFacade(debeterRepository);
+    return createDebeterFacade(transactionRepository, userRepository);
   }
 
 
