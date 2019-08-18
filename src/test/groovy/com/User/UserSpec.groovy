@@ -28,7 +28,7 @@ class UserSpec extends Specification{
         given:"there is user"
         Long userId = userFacade.addNewUser()
         when:"user deletes his acc"
-        userFacade.deleteAccount(userId,false)
+        userFacade.deactivateAccount(userId,false)
         then:"his acc is no longer active"
         !userFacade.getUser(userId).getAccountActive()
     }
@@ -37,7 +37,7 @@ class UserSpec extends Specification{
         given: "there is user"
         Long userId = userFacade.addNewUser()
         when: "user adds funds to his acc"
-        userFacade.addNewFunds(userId, 10L)
+        userFacade.addFunds(userId, 10L)
         then: "funds have been added"
         userFacade.getUser(userId).getUserFunds() == 10L
     }

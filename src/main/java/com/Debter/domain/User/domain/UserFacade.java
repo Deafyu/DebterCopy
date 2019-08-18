@@ -31,12 +31,12 @@ public class UserFacade {
     userRepository.findUserById(userId).ifPresent(user -> userRepository.setSingInStatus(userId, singInStatus));
   }
 
-  public void deleteAccount(Long userId, boolean accountActiveStatus) {
+  public void deactivateAccount(Long userId, boolean accountActiveStatus) {
 
     userRepository.findUserById(userId).ifPresent(user -> userRepository.setAccountActiveStatus(userId, accountActiveStatus));
   }
 
-  public void addNewFunds(Long userId, Long funds) {
+  public void addFunds(Long userId, Long funds) {
     userRepository.findUserById(userId).ifPresent(user -> userRepository.addUserFunds(userId, funds));
   }
 }

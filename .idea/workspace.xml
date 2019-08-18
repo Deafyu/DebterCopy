@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bc506df-9200-4bb6-b40e-9529367dc272" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debter.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/User/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/User/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/User/domain/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/User/domain/UserFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/User/domain/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/User/domain/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/com/User/InMemoryUserRepository.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/User/InMemoryUserRepository.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation/domain/UserRelationFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Debter/domain/UserRelation/domain/UserRelationFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/groovy/com/User/UserSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/User/UserSpec.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/com/UserRelation/UserRelationSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/UserRelation/UserRelationSpec.groovy" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,16 +28,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="499" />
-    <option name="y" value="-12" />
-    <option name="width" value="864" />
-    <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
