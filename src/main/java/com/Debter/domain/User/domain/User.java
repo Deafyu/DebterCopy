@@ -1,6 +1,6 @@
-package com.Debter.domain;
+package com.Debter.domain.User.domain;
 
-import com.Debter.dto.UserDto;
+import com.Debter.domain.User.dto.UserDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,7 +37,7 @@ public class User {
         .build();
   }
 
-  UserDto dto() {
+  public UserDto dto() {
 
     return UserDto.builder()
         .userFunds(userFunds)

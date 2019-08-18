@@ -1,4 +1,4 @@
-package com.Debter.exceptions;
+package com.Debter.domain.User.exceptions;
 
 public class UserNotFoundException extends Exception {
   public UserNotFoundException(String s) {

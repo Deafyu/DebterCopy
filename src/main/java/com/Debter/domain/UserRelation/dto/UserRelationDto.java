@@ -1,4 +1,4 @@
-package com.Debter.dto;
+package com.Debter.domain.UserRelation.dto;
 
 import lombok.AccessLevel;
 import lombok.Builder;
