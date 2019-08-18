@@ -1,4 +1,4 @@
-package com.Debter.domain;
+package com.Debter.domain.Debter;
 
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -13,7 +13,7 @@ public class DebeterFacadeCreator {
   @Autowired
   DebeterRepository debeterRepository;
 
-  public DebterFacade createDebeterFacade(DebeterRepository debeterRepository) {
+  private DebterFacade createDebeterFacade(DebeterRepository debeterRepository) {
 
     return DebterFacade.builder()
         .debeterRepository(debeterRepository)

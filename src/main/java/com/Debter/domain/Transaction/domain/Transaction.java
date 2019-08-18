@@ -1,6 +1,6 @@
-package com.Debter.domain;
+package com.Debter.domain.Transaction.domain;
 
-import com.Debter.dto.TransactionDto;
+import com.Debter.domain.Transaction.dto.TransactionDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,7 +37,7 @@ public class Transaction {
         .build();
   }
 
-  TransactionDto dto() {
+  public TransactionDto dto() {
 
     return TransactionDto.builder()
         .payedBack(payedBack)

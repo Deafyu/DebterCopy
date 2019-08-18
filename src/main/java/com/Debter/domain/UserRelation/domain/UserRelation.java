@@ -1,6 +1,6 @@
-package com.Debter.domain;
+package com.Debter.domain.UserRelation.domain;
 
-import com.Debter.dto.UserRelationDto;
+import com.Debter.domain.UserRelation.dto.UserRelationDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,7 +35,7 @@ public class UserRelation {
         .build();
   }
 
-  UserRelationDto dto() {
+  public UserRelationDto dto() {
 
     return UserRelationDto.builder()
         .userId(userId)
