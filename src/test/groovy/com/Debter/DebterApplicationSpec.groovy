@@ -106,4 +106,13 @@ class DebterApplicationSpec extends Specification {
         then: "he has loged in"
         debterFacade.getUser(userId).getLogedIn()
     }
+
+    def "user acc is no longer active"(){
+        given:"there is user"
+        Long userId = debterFacade.addNewUser()
+        when:"user deletes his acc"
+        debterFacade.deleteAccount(userId,false)
+        then:"his acc is no longer active"
+        !debterFacade.getUser(userId).getAccountActive()
+    }
 }

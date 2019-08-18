@@ -9,15 +9,21 @@ import lombok.experimental.FieldDefaults;
 @Builder
 public class UserDto {
 
-    @Getter
-    Long userId;
+  @Getter
+  Long userId;
 
-    @Getter
-    Long userFunds;
+  @Getter
+  Long userFunds;
 
-    boolean logedIn;
+  boolean accActive;
 
-    public boolean getLogedIn(){
-        return logedIn;
-    }
+  boolean logedIn;
+
+  public boolean getLogedIn() {
+    return logedIn;
+  }
+
+  public boolean getAccountActive() {
+    return accActive;
+  }
 }

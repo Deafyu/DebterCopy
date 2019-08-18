@@ -12,16 +12,17 @@ import java.util.Date;
 @Getter
 public class TransactionDto {
 
-    Long lenderId;
-    Long burrowerId;
-    Long money;
-    Date date;
-    boolean payedBack;
+  Long lenderId;
+  Long burrowerId;
+  Long money;
+  Date date;
+  boolean payedBack;
 
-    public Long getTime(){
-        return date.getTime();
-    }
-    public boolean getPayedBack(){
-        return payedBack;
-    }
+  public Long getTime() {
+    return date.getTime();
+  }
+
+  public boolean getPayedBack() {
+    return payedBack;
+  }
 }

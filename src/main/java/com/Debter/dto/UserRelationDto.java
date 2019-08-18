@@ -18,7 +18,7 @@ public class UserRelationDto {
   Long relationId;
   boolean areFriends;
 
-  public boolean getAreFriends(){
+  public boolean getAreFriends() {
     return areFriends;
   }
 }

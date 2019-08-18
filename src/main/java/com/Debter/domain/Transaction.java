@@ -16,36 +16,36 @@ import java.util.Date;
 @Setter
 public class Transaction {
 
-    Long lenderId;
-    Long burrowerId;
-    Long money;
-    Long transactionId;
-    Date date;
+  Long lenderId;
+  Long burrowerId;
+  Long money;
+  Long transactionId;
+  Date date;
 
-    @Setter
-    @NonFinal
-    boolean payedBack;
+  @Setter
+  @NonFinal
+  boolean payedBack;
 
-    static Transaction fromDto(TransactionDto dto){
+  static Transaction fromDto(TransactionDto dto) {
 
-        return Transaction.builder()
-                .payedBack(dto.getPayedBack())
-                .lenderId(dto.getLenderId())
-                .burrowerId(dto.getBurrowerId())
-                .money(dto.getMoney())
-                .date(dto.getDate())
-                .build();
-    }
+    return Transaction.builder()
+        .payedBack(dto.getPayedBack())
+        .lenderId(dto.getLenderId())
+        .burrowerId(dto.getBurrowerId())
+        .money(dto.getMoney())
+        .date(dto.getDate())
+        .build();
+  }
 
-    TransactionDto dto(){
+  TransactionDto dto() {
 
-        return TransactionDto.builder()
-                .payedBack(payedBack)
-                .money(money)
-                .burrowerId(burrowerId)
-                .lenderId(lenderId)
-                .date(date)
-                .build();
-    }
+    return TransactionDto.builder()
+        .payedBack(payedBack)
+        .money(money)
+        .burrowerId(burrowerId)
+        .lenderId(lenderId)
+        .date(date)
+        .build();
+  }
 
 }

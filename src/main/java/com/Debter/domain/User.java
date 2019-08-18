@@ -12,36 +12,39 @@ import lombok.experimental.NonFinal;
 @Builder(toBuilder = true)
 public class User {
 
-    @Getter
-    Long userId;
+  @Getter
+  Long userId;
 
-    @Getter
-    Long userFunds;
+  @Getter
+  @NonFinal
+  Long userFunds;
 
 
-    @Setter
-    @NonFinal
-    boolean accActive;
+  @Setter
+  @NonFinal
+  boolean accActive;
 
-    @Setter
-    @NonFinal
-    boolean logedIn;
+  @Setter
+  @NonFinal
+  boolean logedIn;
 
-    static User fromDto(UserDto dto){
+  static User fromDto(UserDto dto) {
 
-        return User.builder()
-                .userFunds(dto.getUserFunds())
-                .logedIn(dto.getLogedIn())
-                .build();
-    }
+    return User.builder()
+        .userFunds(dto.getUserFunds())
+        .logedIn(dto.getLogedIn())
+        .accActive(dto.getAccountActive())
+        .build();
+  }
 
-    UserDto dto(){
+  UserDto dto() {
 
-        return UserDto.builder()
-                .userFunds(userFunds)
-                .logedIn(logedIn)
-                .build();
-    }
+    return UserDto.builder()
+        .userFunds(userFunds)
+        .logedIn(logedIn)
+        .accActive(accActive)
+        .build();
+  }
 
 
 }

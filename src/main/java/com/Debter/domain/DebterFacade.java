@@ -39,7 +39,7 @@ public class DebterFacade {
 
   public UserDto getUser(Long userId) throws UserNotFoundException {
 
-    return debeterRepository.findUseById(userId)
+    return debeterRepository.findUserById(userId)
         .orElseThrow(() -> new UserNotFoundException("User: " + userId + " not found"))
         .dto();
   }
@@ -85,6 +85,11 @@ public class DebterFacade {
 
   public void logInUser(Long userId, boolean singInStatus) {
 
-    debeterRepository.findUseById(userId).ifPresent(user -> debeterRepository.setSingInStatus(userId,singInStatus));
+    debeterRepository.findUserById(userId).ifPresent(user -> debeterRepository.setSingInStatus(userId, singInStatus));
+  }
+
+  public void deleteAccount(Long userId,boolean accountActiveStatus) {
+
+    debeterRepository.findUserById(userId).ifPresent(user -> debeterRepository.setAccountActiveStatus(userId,accountActiveStatus));
   }
 }

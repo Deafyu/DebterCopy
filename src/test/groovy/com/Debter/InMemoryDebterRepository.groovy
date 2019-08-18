@@ -5,15 +5,13 @@ import com.Debter.domain.User
 import com.Debter.domain.Transaction
 import com.Debter.domain.UserRelation
 
-import java.time.LocalDate
-
 class InMemoryDebterRepository implements DebeterRepository {
 
     Map<Long, Transaction> transactions = new HashMap<>()
 
     Map<Long, User> users = new HashMap<>()
 
-    Map<Long , UserRelation> userRelations = new HashMap<>()
+    Map<Long, UserRelation> userRelations = new HashMap<>()
 
     @Override
     Long createNewUser() {
@@ -33,7 +31,7 @@ class InMemoryDebterRepository implements DebeterRepository {
     }
 
     @Override
-    Optional<User> findUseById(Long userId) {
+    Optional<User> findUserById(Long userId) {
 
         return Optional.ofNullable(users.get(userId))
     }
@@ -119,6 +117,13 @@ class InMemoryDebterRepository implements DebeterRepository {
     void setSingInStatus(Long userId, boolean singInStatus) {
 
         users.get(userId).setLogedIn(singInStatus)
+
+    }
+
+    @Override
+    void setAccountActiveStatus(Long userId, boolean accountActiveStatus) {
+
+        users.get(userId).setAccActive(accountActiveStatus)
 
     }
 }

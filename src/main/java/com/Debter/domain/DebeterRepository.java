@@ -8,7 +8,7 @@ public interface DebeterRepository {
 
   Long createNewUser();
 
-  Optional<User> findUseById(Long userId);
+  Optional<User> findUserById(Long userId);
 
   Long createNewTransaction(Long userId, Long userId2, Long money, Date date);
 
@@ -25,4 +25,6 @@ public interface DebeterRepository {
   void setTransactionsPayedBackStatus(Long transactionId, boolean payedBackStatus);
 
   void setSingInStatus(Long userId, boolean singInStatus);
+
+  void setAccountActiveStatus(Long userId, boolean accountActiveStatus);
 }
