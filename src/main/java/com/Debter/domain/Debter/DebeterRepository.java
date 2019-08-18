@@ -1,4 +1,4 @@
-package com.Debter.domain;
+package com.Debter.domain.Debter;
 
 public interface DebeterRepository {
 

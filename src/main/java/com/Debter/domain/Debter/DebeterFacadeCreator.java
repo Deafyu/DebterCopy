@@ -1,4 +1,4 @@
-package com.Debter.domain;
+package com.Debter.domain.Debter;
 
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;

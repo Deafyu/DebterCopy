@@ -30,7 +30,7 @@ class TransactionSpec extends Specification {
         transactionFacade.addNewTransaction(user.getUserId(), user1.getUserId(), 30L)
         transactionFacade.addNewTransaction(4L, user1.getUserId(), 30L)
         when: "user ask for history of transactions"
-        List<TransactionDto> list = transactionFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
+        List<TransactionDto> list = transactionFacade.getHistoryOfTransactions(user.getUserId(), user1.getUserId())
         then: "he receives history"
         list.size() == 3
     }
@@ -46,7 +46,7 @@ class TransactionSpec extends Specification {
         transactionFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 20L)
         Thread.sleep(1)
         transactionFacade.addNewTransaction(user1.getUserId(), user.getUserId(), 40L)
-        List<TransactionDto> list2 = transactionFacade.getEntireHistoryOfTransactions(user.getUserId(), user1.getUserId())
+        List<TransactionDto> list2 = transactionFacade.getHistoryOfTransactions(user.getUserId(), user1.getUserId())
         when: "when system is asked to sort them"
         List<TransactionDto> list = transactionFacade.sortHistoryByDate(list2)
         then: "it gets sorted history"

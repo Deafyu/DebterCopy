@@ -30,7 +30,7 @@ public class TransactionFacade {
         .dto();
   }
 
-  public List<TransactionDto> getEntireHistoryOfTransactions(Long userId, Long userId2) {
+  public List<TransactionDto> getHistoryOfTransactions(Long userId, Long userId2) {
 
     List<Transaction> transactions = transactionRepository.getAllHistory(userId, userId2);
     List<TransactionDto> transactionsDto = new ArrayList<>();
