@@ -39,4 +39,8 @@ public class UserFacade {
   public void addFunds(Long userId, Long funds) {
     userRepository.findUserById(userId).ifPresent(user -> userRepository.addUserFunds(userId, funds));
   }
+
+  public void removeFunds(Long userId, Long funds) {
+    userRepository.findUserById(userId).ifPresent(user -> userRepository.removeUserFunds(userId, funds));
+  }
 }
