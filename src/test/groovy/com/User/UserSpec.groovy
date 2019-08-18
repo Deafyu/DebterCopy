@@ -41,5 +41,14 @@ class UserSpec extends Specification{
         then: "funds have been added"
         userFacade.getUser(userId).getUserFunds() == 10L
     }
+
+    def "remove funds from user acc"() {
+        given: "there is user"
+        Long userId = userFacade.addNewUser()
+        when: "user adds funds to his acc"
+        userFacade.removeFunds(userId, 10L)
+        then: "funds have been removed"
+        userFacade.getUser(userId).getUserFunds() == -10L
+    }
 }
 

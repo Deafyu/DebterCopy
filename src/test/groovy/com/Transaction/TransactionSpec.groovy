@@ -21,6 +21,7 @@ class TransactionSpec extends Specification {
         then: "transaction has been added"
         transactionFacade.getTransaction(transactionId) != null
     }
+
     def "user is able to get specific history of transactions with another user"() {
         given: "there are 2 users with some transactions"
         user.getUserId() >> 1L
