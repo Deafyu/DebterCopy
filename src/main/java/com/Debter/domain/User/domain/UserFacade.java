@@ -35,4 +35,8 @@ public class UserFacade {
 
     userRepository.findUserById(userId).ifPresent(user -> userRepository.setAccountActiveStatus(userId, accountActiveStatus));
   }
+
+  public void addNewFunds(Long userId, Long funds) {
+    userRepository.findUserById(userId).ifPresent(user -> userRepository.addUserFunds(userId, funds));
+  }
 }

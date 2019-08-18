@@ -15,6 +15,7 @@ public class User {
   @Getter
   Long userId;
 
+  @Setter
   @Getter
   @NonFinal
   Long userFunds;

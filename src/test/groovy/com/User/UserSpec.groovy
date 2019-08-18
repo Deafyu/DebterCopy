@@ -32,5 +32,14 @@ class UserSpec extends Specification{
         then:"his acc is no longer active"
         !userFacade.getUser(userId).getAccountActive()
     }
+
+    def "user can add new funds to his acc"() {
+        given: "there is user"
+        Long userId = userFacade.addNewUser()
+        when: "user adds funds to his acc"
+        userFacade.addNewFunds(userId, 10L)
+        then: "funds have been added"
+        userFacade.getUser(userId).getUserFunds() == 10L
+    }
 }
 
