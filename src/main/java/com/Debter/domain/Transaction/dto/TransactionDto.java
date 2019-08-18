@@ -3,7 +3,9 @@ package com.Debter.domain.Transaction.dto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
 
 import java.util.Date;
 
@@ -16,6 +18,10 @@ public class TransactionDto {
   Long burrowerId;
   Long money;
   Date date;
+  Long transactionId;
+
+  @NonFinal
+  @Setter
   boolean payedBack;
 
   public Long getTime() {

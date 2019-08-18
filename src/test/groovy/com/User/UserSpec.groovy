@@ -20,8 +20,8 @@ class UserSpec extends Specification{
         Long userId = userFacade.addNewUser()
         when: "when he logs in"
         userFacade.logInUser(userId, true)
-        then: "he has loged in"
-        userFacade.getUser(userId).getLogedIn()
+        then: "he has logged in"
+        userFacade.getUser(userId).getLoggedIn()
     }
 
     def "user acc is no longer active"(){

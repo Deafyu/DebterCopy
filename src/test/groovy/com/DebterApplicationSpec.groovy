@@ -26,7 +26,6 @@ class DebterApplicationSpec extends Specification {
         // Do uzupełnienia z requestem
 
         userFacade.addFunds(userId, 10L)
-
         then: "funds have been checked"
         !debterFacade.checkFunds(userId, 15L)
     }

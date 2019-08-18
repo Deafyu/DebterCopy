@@ -6,11 +6,10 @@ import java.util.Optional;
 
 public interface TransactionRepository {
 
-  Long createNewTransaction(Long userId, Long userId2, Long money, Date date);
+  void saveTransaction(Transaction transaction);
 
   Optional<Transaction> findTransactionById(Long transactionId);
 
   List<Transaction> getAllHistory(Long userId, Long userId2);
 
-  void setTransactionsPayedBackStatus(Long transactionId, boolean payedBackStatus);
 }

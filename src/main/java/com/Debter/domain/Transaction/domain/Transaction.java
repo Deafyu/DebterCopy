@@ -13,7 +13,6 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(toBuilder = true)
 @Getter
-@Setter
 public class Transaction {
 
   Long lenderId;
@@ -21,9 +20,6 @@ public class Transaction {
   Long money;
   Long transactionId;
   Date date;
-
-  @Setter
-  @NonFinal
   boolean payedBack;
 
   static Transaction fromDto(TransactionDto dto) {
@@ -34,6 +30,7 @@ public class Transaction {
         .burrowerId(dto.getBurrowerId())
         .money(dto.getMoney())
         .date(dto.getDate())
+        .transactionId(dto.getTransactionId())
         .build();
   }
 
@@ -42,6 +39,7 @@ public class Transaction {
     return TransactionDto.builder()
         .payedBack(payedBack)
         .money(money)
+        .transactionId(transactionId)
         .burrowerId(burrowerId)
         .lenderId(lenderId)
         .date(date)

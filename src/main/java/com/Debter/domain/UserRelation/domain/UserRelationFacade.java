@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.Random;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(access = AccessLevel.PACKAGE)
@@ -15,19 +16,31 @@ public class UserRelationFacade {
   UserRelationRepository userRelationRepository;
 
   public Long addNewRelation(Long userId, Long userId2) {
+    Random random = new Random();
+    Long relationId = random.nextLong();
 
-    return userRelationRepository.createNewRelation(userId, userId2, new Date());
+    userRelationRepository.saveUserRelation(UserRelation.builder()
+        .relationId(relationId)
+        .userId(userId)
+        .userId2(userId2)
+        .date(new Date())
+        .areFriends(true)
+        .build()
+    );
+
+    return relationId;
   }
 
-  public UserRelationDto getRelation(Long relationId) throws UserRelationNotFoundException {
+  public UserRelationDto findRelationById(Long relationId) throws UserRelationNotFoundException {
 
     return userRelationRepository.findRelationById(relationId)
         .orElseThrow(() -> new UserRelationNotFoundException("UserRelation: " + relationId + " not found"))
         .dto();
   }
 
-  public void setFriendStatus(Long relationId, boolean relation) {
-
-    userRelationRepository.findRelationById(relationId).ifPresent(userRelation -> userRelationRepository.setAreFriendsStatus(relationId, relation));
+  public void setFriendStatus(Long relationId, boolean relationStatus) throws UserRelationNotFoundException {
+    UserRelationDto dto = findRelationById(relationId);
+    dto.setAreFriends(relationStatus);
+    userRelationRepository.saveUserRelation(UserRelation.fromDto(dto));
   }
 }
