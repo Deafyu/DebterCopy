@@ -2,6 +2,8 @@ package com.Debter.domain.Debter;
 
 import com.Debter.domain.Transaction.domain.TransactionRepository;
 import com.Debter.domain.User.domain.UserRepository;
+import com.Debter.domain.User.dto.UserDto;
+import com.Debter.domain.User.exceptions.UserNotFoundException;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
@@ -15,4 +17,12 @@ public class DebterFacade {
   TransactionRepository transactionRepository;
 
 
+  public boolean checkFunds(Long userId, Long funds) throws UserNotFoundException {
+
+    UserDto userDto = userRepository.findUserById(userId)
+        .orElseThrow(() -> new UserNotFoundException("User: " + userId + " not found"))
+        .dto();
+
+    return userDto.getUserFunds() - funds >= 0;
+  }
 }
