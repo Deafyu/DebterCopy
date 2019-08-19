@@ -19,7 +19,7 @@ public class UserRelationFacade {
     Random random = new Random();
     Long relationId = random.nextLong();
 
-    userRelationRepository.saveUserRelation(UserRelation.builder()
+    userRelationRepository.save(UserRelation.builder()
         .relationId(relationId)
         .userId(userId)
         .userId2(userId2)
@@ -33,7 +33,7 @@ public class UserRelationFacade {
 
   public UserRelationDto findRelationById(Long relationId) throws UserRelationNotFoundException {
 
-    return userRelationRepository.findRelationById(relationId)
+    return userRelationRepository.findById(relationId)
         .orElseThrow(() -> new UserRelationNotFoundException("UserRelation: " + relationId + " not found"))
         .dto();
   }
@@ -41,6 +41,6 @@ public class UserRelationFacade {
   public void setFriendStatus(Long relationId, boolean relationStatus) throws UserRelationNotFoundException {
     UserRelationDto dto = findRelationById(relationId);
     dto.setAreFriends(relationStatus);
-    userRelationRepository.saveUserRelation(UserRelation.fromDto(dto));
+    userRelationRepository.save(UserRelation.fromDto(dto));
   }
 }

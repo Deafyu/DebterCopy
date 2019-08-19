@@ -1,10 +1,8 @@
 package com.Debter.domain.User.domain;
 
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository {
 
-  Optional<User> findUserById(Long userId);
+public interface UserRepository  extends JpaRepository<User, Long> {
 
-  void saveUser(User user);
 }

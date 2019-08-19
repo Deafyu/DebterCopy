@@ -19,7 +19,7 @@ public class DebterFacade {
 
   public boolean checkFunds(Long userId, Long funds) throws UserNotFoundException {
 
-    UserDto userDto = userRepository.findUserById(userId)
+    UserDto userDto = userRepository.findById(userId)
         .orElseThrow(() -> new UserNotFoundException("User: " + userId + " not found"))
         .dto();
 
