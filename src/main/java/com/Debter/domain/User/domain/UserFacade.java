@@ -19,7 +19,7 @@ public class UserFacade {
     Random random = new Random();
     Long userId = random.nextLong();
 
-    userRepository.saveUser(User.builder()
+    userRepository.save(User.builder()
         .userId(userId)
         .userFunds(0L)
         .accActive(true)
@@ -31,7 +31,7 @@ public class UserFacade {
   }
 
   public UserDto getUser(Long userId) throws UserNotFoundException {
-    return userRepository.findUserById(userId)
+    return userRepository.findById(userId)
         .orElseThrow(() -> new UserNotFoundException("User: " + userId + " not found"))
         .dto();
   }
@@ -39,24 +39,24 @@ public class UserFacade {
   public void logInUser(Long userId, boolean loggedInStatus) throws UserNotFoundException {
     UserDto dto = getUser(userId);
     dto.setLoggedIn(loggedInStatus);
-    userRepository.saveUser(User.fromDto(dto));
+    userRepository.save(User.fromDto(dto));
   }
 
   public void deactivateAccount(Long userId, boolean accountActiveStatus) throws UserNotFoundException {
     UserDto dto = getUser(userId);
     dto.setAccActive(accountActiveStatus);
-    userRepository.saveUser(User.fromDto(dto));
+    userRepository.save(User.fromDto(dto));
   }
 
   public void addFunds(Long userId, Long funds) throws UserNotFoundException {
     UserDto dto = getUser(userId);
     dto.setUserFunds(dto.getUserFunds() + funds);
-    userRepository.saveUser(User.fromDto(dto));
+    userRepository.save(User.fromDto(dto));
   }
 
   public void removeFunds(Long userId, Long funds) throws UserNotFoundException {
     UserDto dto = getUser(userId);
     dto.setUserFunds(dto.getUserFunds() - funds);
-    userRepository.saveUser(User.fromDto(dto));
+    userRepository.save(User.fromDto(dto));
   }
 }

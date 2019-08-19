@@ -20,7 +20,7 @@ public class TransactionFacade {
     Random random = new Random();
     Long transactionId = random.nextLong();
 
-    transactionRepository.saveTransaction(Transaction.builder()
+    transactionRepository.save(Transaction.builder()
         .transactionId(transactionId)
         .date(new Date())
         .burrowerId(burrowerId)
@@ -35,7 +35,7 @@ public class TransactionFacade {
 
   public TransactionDto findTransactionById(Long transactionId) throws TransactionNotFoundException {
 
-    return transactionRepository.findTransactionById(transactionId)
+    return transactionRepository.findById(transactionId)
         .orElseThrow(() -> new TransactionNotFoundException("Transaction :" + transactionId + " not found"))
         .dto();
   }
@@ -70,6 +70,6 @@ public class TransactionFacade {
 
     TransactionDto dto = findTransactionById(transactionId);
     dto.setPayedBack(payedBackStatus);
-    transactionRepository.saveTransaction(Transaction.fromDto(dto));
+    transactionRepository.save(Transaction.fromDto(dto));
   }
 }
