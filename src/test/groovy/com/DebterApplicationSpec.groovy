@@ -15,8 +15,7 @@ class DebterApplicationSpec extends Specification {
     InMemoryUserRepository imur = new InMemoryUserRepository()
     DebterFacade debterFacade = new DebeterFacadeCreator().createDebeterFacade(new InMemoryTransactionRepository(), imur)
     UserFacade userFacade = new UserFacadeCreator().createUserFacade(imur)
-    TransactionFacade transactionFacade = new TransactionFacadeCreator().createTransactionFacade(new InMemoryTransactionRepository() {
-    })
+
 
     def "deny when no sufficient funds"() {
         given: "there are is a user"
