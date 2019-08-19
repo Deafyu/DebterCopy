@@ -6,6 +6,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Random;
+
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder(access = AccessLevel.PACKAGE)
 public class UserFacade {
@@ -14,29 +16,47 @@ public class UserFacade {
 
 
   public Long addNewUser() {
+    Random random = new Random();
+    Long userId = random.nextLong();
 
-    return userRepository.createNewUser();
+    userRepository.saveUser(User.builder()
+        .userId(userId)
+        .userFunds(0L)
+        .accActive(true)
+        .loggedIn(false)
+        .build()
+    );
 
+    return userId;
   }
 
   public UserDto getUser(Long userId) throws UserNotFoundException {
-
     return userRepository.findUserById(userId)
         .orElseThrow(() -> new UserNotFoundException("User: " + userId + " not found"))
         .dto();
   }
 
-  public void logInUser(Long userId, boolean singInStatus) {
-
-    userRepository.findUserById(userId).ifPresent(user -> userRepository.setSingInStatus(userId, singInStatus));
+  public void logInUser(Long userId, boolean loggedInStatus) throws UserNotFoundException {
+    UserDto dto = getUser(userId);
+    dto.setLoggedIn(loggedInStatus);
+    userRepository.saveUser(User.fromDto(dto));
   }
 
-  public void deactivateAccount(Long userId, boolean accountActiveStatus) {
-
-    userRepository.findUserById(userId).ifPresent(user -> userRepository.setAccountActiveStatus(userId, accountActiveStatus));
+  public void deactivateAccount(Long userId, boolean accountActiveStatus) throws UserNotFoundException {
+    UserDto dto = getUser(userId);
+    dto.setAccActive(accountActiveStatus);
+    userRepository.saveUser(User.fromDto(dto));
   }
 
-  public void addFunds(Long userId, Long funds) {
-    userRepository.findUserById(userId).ifPresent(user -> userRepository.addUserFunds(userId, funds));
+  public void addFunds(Long userId, Long funds) throws UserNotFoundException {
+    UserDto dto = getUser(userId);
+    dto.setUserFunds(dto.getUserFunds() + funds);
+    userRepository.saveUser(User.fromDto(dto));
+  }
+
+  public void removeFunds(Long userId, Long funds) throws UserNotFoundException {
+    UserDto dto = getUser(userId);
+    dto.setUserFunds(dto.getUserFunds() - funds);
+    userRepository.saveUser(User.fromDto(dto));
   }
 }

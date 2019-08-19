@@ -18,7 +18,7 @@ class UserRelationSpec extends Specification {
         when: "one accepts the offer sent by the 2nd one"
         Long relationId = userRelationFacade.addNewRelation(user.getUserId(), user1.getUserId())
         then: "their relation is added to the db"
-        userRelationFacade.getRelation(relationId) != null
+        userRelationFacade.findRelationById(relationId) != null
     }
 
     def "user is able to delete another user form his friend list"() {
@@ -29,6 +29,6 @@ class UserRelationSpec extends Specification {
         Long relationId = userRelationFacade.addNewRelation(user.getUserId(), user1.getUserId())
         userRelationFacade.setFriendStatus(relationId, false)
         then: "there are no more friends"
-        !userRelationFacade.getRelation(relationId).getAreFriends()
+        !userRelationFacade.findRelationById(relationId).getAreFriends()
     }
 }

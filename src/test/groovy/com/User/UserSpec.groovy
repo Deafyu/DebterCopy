@@ -20,8 +20,8 @@ class UserSpec extends Specification{
         Long userId = userFacade.addNewUser()
         when: "when he logs in"
         userFacade.logInUser(userId, true)
-        then: "he has loged in"
-        userFacade.getUser(userId).getLogedIn()
+        then: "he has logged in"
+        userFacade.getUser(userId).getLoggedIn()
     }
 
     def "user acc is no longer active"(){
@@ -40,6 +40,15 @@ class UserSpec extends Specification{
         userFacade.addFunds(userId, 10L)
         then: "funds have been added"
         userFacade.getUser(userId).getUserFunds() == 10L
+    }
+
+    def "remove funds from user acc"() {
+        given: "there is user"
+        Long userId = userFacade.addNewUser()
+        when: "user adds funds to his acc"
+        userFacade.removeFunds(userId, 10L)
+        then: "funds have been removed"
+        userFacade.getUser(userId).getUserFunds() == -10L
     }
 }
 

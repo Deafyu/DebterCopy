@@ -3,7 +3,9 @@ package com.Debter.domain.User.dto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder
@@ -13,14 +15,20 @@ public class UserDto {
   Long userId;
 
   @Getter
+  @NonFinal
+  @Setter
   Long userFunds;
 
+  @NonFinal
+  @Setter
   boolean accActive;
 
-  boolean logedIn;
+  @NonFinal
+  @Setter
+  boolean loggedIn;
 
-  public boolean getLogedIn() {
-    return logedIn;
+  public boolean getLoggedIn() {
+    return loggedIn;
   }
 
   public boolean getAccountActive() {
